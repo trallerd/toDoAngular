@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Todo } from 'src/models/todo.model';
 
 @Component({
   selector: 'app-root',
@@ -6,13 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public todos: any[] = [];
+  public todos: Todo[] = [];
   public title: String = 'Tarefas do dia';
 
   constructor() {
-    this.todos.push('Tarefa 01');    
-    this.todos.push('Tarefa 02');    
-    this.todos.push('Tarefa 03');    
+    this.todos.push(new Todo(1,'Tarefa 1', false));    
+    this.todos.push(new Todo(2,'Tarefa 2', false));    
+    this.todos.push(new Todo(3,'Tarefa 3', true));    
   }
 
   aletrarTexto() {
