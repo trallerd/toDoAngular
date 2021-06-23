@@ -3,5 +3,9 @@
 <button (click)="aletrarTexto()">Mudar o texto a cima</button>
 
 <ul>
-  <li *ngFor="let todo of todos">{{todo.title}} | <button *ngIf="!todo.done">Concluir</button> | <button>Remover</button></li>
+  <li *ngFor="let todo of todos">{{todo.title}} 
+    | <button *ngIf="!todo.done" (click)="markAsDone(todo)">Concluir</button> 
+    | <button *ngIf="todo.done" (click)="unMark(todo)">Refazer</button> 
+    | <button (click)="remove(todo)">Remover</button>
+  </li>
 </ul>
